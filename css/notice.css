@@ -1,0 +1,101 @@
+.notice-list {
+    font-size: 0.875rem;
+    padding: 1.25rem 3rem;
+}
+/*버튼*/
+.notice-list .notice-btn ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.notice-list .notice-btn ul li {
+    display: flex;
+    align-items: center;
+}
+.notice-list .notice-btn ul li a {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.notice-list .notice-btn ul li.left-btn a {
+    background-color: #333;
+    color: #fff;
+}
+.notice-list .notice-btn ul li.left-btn a:last-child {
+    background-color: #333;
+    color: #fff;
+}
+.notice-list ul li.right-btn a.write {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: #333;
+    margin:0 0 0 10px;
+    color: #fff;
+}
+.notice-list .notice-btn ul li.right-btn .search {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    margin-right: 10px;
+}
+.notice-list .notice-btn ul li.right-btn .search input {
+    outline: none;
+    border-radius: 0;
+    height: 30px;
+}
+.notice-list table input[type="checkbox"]{
+    width: 15px;
+    height: 15px;
+}
+.notice-list table tbody tr:first-child {
+    border-top: 2px solid #000;
+}
+.notice-list table tbody tr {
+    border-bottom: 1px solid #bdbdbd;
+}
+.notice-list table tbody td label {
+    width: 100%;
+}
+.notice-list table tbody td, .notice-list table tbody th {
+    padding: 10px 0;
+}
+.notice-list table tbody td a:hover {
+    text-decoration: underline;
+}
+/* 페이징 버튼 */
+ul.notice-page-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    text-align: center;
+} 
+ul.notice-page-btn li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #d3d3d3;
+    background: #ffff;
+    cursor: pointer; 
+    font-size: 0.9375rem;
+    font-weight: 500;
+    width: 35px;
+    height: 35px;
+    margin-right: 3px;
+} 
+#page-num-box {
+    display: flex;
+}
+ul.notice-page-btn li.page-btn {
+    position: relative;
+}
+ul.notice-page-btn li.page-btn > a > img{
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+ul.notice-page-btn li.page-num.click {
+    background: #151517;
+    color: #fff;
+} 

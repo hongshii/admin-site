@@ -1,0 +1,34 @@
+body {font-family: 'NotoSansKR',sans-serif; }
+.logo {
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+.logo > img {
+    height: 80%;
+}
+.mypage > li > a {
+    font-size: 0.875rem;
+}
+.nav {
+    font-size: 0.9375rem;
+}
+.nav .main-menu {
+    border-bottom: 1px solid #666;
+}
+.nav .main-menu:first-child {
+    border-top: 1px solid #666;
+}
+.sub-menu > nav > a {
+    font-size: 0.8438rem;
+}
+
+/*footer*/
+footer p {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    border-top: 1px solid #dadada;
+    line-height: 50px;
+    font-size: 12px;
+}

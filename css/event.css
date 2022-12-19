@@ -1,0 +1,96 @@
+.event-list {
+    font-size: 0.875rem;
+    padding: 1.25rem 3rem;
+}
+/*버튼*/
+.event-list .event-btn ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.event-list .event-btn ul li {
+    display: flex;
+    align-items: center;
+}
+.event-list .event-btn ul li input {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.event-list .event-btn ul li.left-btn input {
+    background: #333;
+    color: #fff;
+}
+.event-list ul li.right-btn a.write {
+    background: #333;
+    margin:0 0 0 10px;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.event-list .event-btn ul li.right-btn .search {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+}
+.event-list .event-btn ul li.right-btn .search input {
+    outline: none;
+    border-radius: 0;
+    font-size: 0.75rem;
+}
+.event-list table input[type="checkbox"]{
+    width: 15px;
+    height: 15px;
+}
+.event-list table tbody tr:first-child {
+    border-top: 2px solid #000;
+}
+.event-list table tbody tr {
+    border-bottom: 1px solid #bdbdbd;
+}
+.event-list table tbody td label {
+    width: 100%;
+}
+.event-list table tbody td, .event-list table tbody th {
+    padding: 10px 0;
+}
+.event-list table tbody td a:hover {
+    text-decoration: underline;
+}
+/* 페이징 버튼 */
+ul.event-page-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    text-align: center;
+} 
+ul.event-page-btn li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #d3d3d3;
+    background: #ffff;
+    cursor: pointer; 
+    font-size: 0.9375rem;
+    font-weight: 500;
+    width: 35px;
+    height: 35px;
+    margin-right: 3px;
+} 
+#page-num-box {
+    display: flex;
+}
+ul.event-page-btn li.page-btn {
+    position: relative;
+}
+ul.event-page-btn li.page-btn > a > img{
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+ul.event-page-btn li.page-num.click {
+    background: #151517;
+    color: #fff;
+} 

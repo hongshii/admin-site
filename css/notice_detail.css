@@ -1,0 +1,63 @@
+
+.notice-detail .notice-detail-wrap {
+    width: 1100px;
+    margin: auto;
+    padding: 35px 15px;
+}
+.notice-detail .notice-detail-wrap .notice-detail-title {
+    margin: 10px 0 35px 0;
+    padding-top: 35px;
+    border-top: 2px solid #000;
+}
+.notice-detail .notice-detail-wrap .notice-detail-title > h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+.notice-detail .notice-detail-wrap .notice-detail-title > span {
+    font-size: 0.8125rem;
+    display: block;
+    text-align: right;
+}
+.notice-detail .notice-detail-wrap .notice-detail-content {
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    background: #f5f5f5;;
+}
+.notice-detail .notice-detail-wrap .notice-detail-content > img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.notice-detail .notice-detail-wrap .notice-detail-content > p {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+/* 버튼 */
+.notice-detail-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.notice-detail-btn li {
+    display: flex;
+    align-items: center;
+}
+.notice-detail-btn li:first-child {
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 2px solid #333;
+}
+.notice-detail-btn li:last-child {
+    border-radius: 5px;
+    background-color: #333;
+}
+.notice-detail-btn li:first-child input {
+    padding: 10px 15px;
+    color: #000;
+    background: none;
+}
+.notice-detail-btn li:last-child input {
+    background: none;
+    color: #fff;
+    padding: 10px 15px;
+}

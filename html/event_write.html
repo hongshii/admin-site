@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CHABOB 이벤트 등록</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/event_write.css">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <header id="header"></header>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="content-header d-flex px-4 justify-content-between">
+                    <h1 class="my-3 fs-5 fw-bold">이벤트 등록</h1>
+                    <ul class="d-flex align-items-center">
+                        <li>게시판 관리</li>
+                        <span>&nbsp;>&nbsp;</span>
+                        <li>이벤트 등록</li>
+                    </ul>
+                </div>
+                <form  method="post" enctype="multipart/form-data">
+                <div class="card m-4 p-4 event-write-form">
+                    <table>
+                        <tr>
+                            <th>제목</th>
+                            <td>
+                                <input type="text" name="title">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>부제목</th>
+                            <td class="sub-title">
+                                <input type="text" name="sub_title">
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th>이벤트 기간</th>
+                            <td class="event-date">
+                                <input type="date" name="create_date">
+                                <span> ~ </span>
+                                <input type="date" name="end_date">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>첨부파일</th>
+                            <td class="file-box">
+                                <input class="upload-name" value="첨부파일" placeholder="첨부파일" readonly="readonly">
+                                 <label for="btnAtt">파일찾기</label> 
+                                <input type="file" id="btnAtt" multiple="multiple">
+                            </td>
+                        </tr>
+                        <tr class="preview-img">
+                            <th>첨부파일 이미지</th>
+                            <td>
+                                <div id='att_zone' 
+                                data-placeholder='파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요'></div>
+                            </td>
+                        </tr>
+                        <tr >
+                            <th>이벤트 내용</th>
+                            <td>
+                                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="event-write-btn">
+                        <a href="#">등록하기</a>
+                    </div>
+                </div>
+                </form>
+            </main>
+            <footer>
+                <p>2022 &copy; CHABOB</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script src="../js/file.js"></script>
+    <script src="../js/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>nav-bar</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../css/header.css">
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between">
+            <!-- 로고 -->
+            <a class="logo navbar-brand ps-3" href="index.html">
+                <img src="../img/main_logo.png" alt="차밥로고">
+            </a>
+            <!-- 마이페이지 -->
+            <ul class="navbar-nav ms-auto ms-md-0 d-flex align-items-center">
+                <li class="text-white me-4">
+                    <span>관리자님</span>
+                    <span> 안녕하세요.</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user fa-fw"></i>
+                    </a>
+                    <ul class="mypage bg-white rounded shadow">
+                        <li>
+                            <a class="d-block py-3 px-2" href="reset-password.html">비밀번호&nbsp;변경</a>
+                        </li>
+                        <li>
+                            <a class="d-block py-3 px-2" href="#">로그아웃</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    <!-- 사이드바 메뉴 -->
+    <div id="layoutSidenav_nav">
+        <div>
+            <ul class="side-bar">
+                <li class="side-bar-list">
+                    <a class="sub-menu-first text-warning" href="index.html">
+                        <i class="arrow fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="side-bar-list">
+                    <div class="sub-menu">
+                        <a href="#">
+                            <i class="fa-solid fa-bolt"></i>
+                            디바이스 관리
+                        </a>
+                        <i class="arrow fas fa-angle-down"></i>
+                    </div>
+                    <ul class="sub-menu-list">
+                        <li>
+                            <a href="device.html">전체 디바이스</a>
+                        </li>
+                        <li>
+                            <a href="device_write.html">디바이스 등록/수정</a>
+                        </li>
+                        <li>
+                            <a href="error.html">에러 내역</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="side-bar-list">
+                    <a href="user_info.html">
+                        <i class="fas fa-user fa-fw"></i>
+                        회원관리
+                    </a>
+                </li>
+                <li class="side-bar-list">
+                    <a href="usage_history.html">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        사용내역 관리
+                    </a>
+                </li>
+                <li class="side-bar-list">
+                    <div class="sub-menu">
+                        <a href="#">
+                            <i class="fas fa-columns"></i>
+                            게시판 관리
+                        </a>
+                        <i class="arrow fas fa-angle-down"></i>
+                    </div>
+                    <ul class="sub-menu-list">
+                        <li>
+                            <a href="notice.html">공지사항 조회</a>
+                        </li>
+                        <li>
+                            <a href="notice_write.html">공지사항 등록</a>
+                        </li>
+                        <li>
+                            <a href="event.html">이벤트 조회</a>
+                        </li>
+                        <li>
+                            <a href="event_write.html">이벤트 등록</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="side-bar-list">
+                    <div class="sub-menu">
+                        <a href="#">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                            고장, 설치, 문의
+                        </a>
+                        <i class="arrow fas fa-angle-down"></i>
+                    </div>
+                    <ul class="sub-menu-list">
+                        <li>
+                            <a href="repair.html">고장 신고</a>
+                        </li>
+                        <li>
+                            <a href="install.html">설치 접수</a>
+                        </li>
+                        <li>
+                            <a href="inquiry.html">문의 내역</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+	    $(".side-bar-list").click(function() {
+	        $(this).children(".sub-menu-list").stop().slideToggle(300);
+	        $(this).toggleClass('active').siblings().removeClass('active');
+	        $(this).nextAll().children(".sub-menu-list").slideUp(300);
+	        $(this).prevAll().children(".sub-menu-list").slideUp(300); 
+	    });
+    </script>
+</body>
+</html>

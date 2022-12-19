@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CHABOB MANAGEMENT SYSTEM</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/styles.css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            main {
+                padding-top: 56px;
+            }
+            table {
+                display: block;
+                overflow-y: auto;
+            }
+            table tbody tr td div.text-ellipsis {
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                white-space: nowrap;
+            }
+            table tbody tr td div.text-ellipsis > * {
+                display: table-cell;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            table thead {display: none;}
+            table tbody tr td:hover a {
+                font-weight: bold;
+            }
+            .dashboad-btm > div > .card {
+                height: 327px;
+            }
+            /* 데이터 건수 바탕 */
+            .count > li {
+                background: #f0f0f0;
+                border-radius: 20px;
+                padding: 20px 15px;
+            }
+            /*사용내역 수직정렬*/
+            .use-history {
+                position: relative;
+                height: 263px;
+            }
+            .use-history > ul {
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            /*탭메뉴*/
+            .tab-nav {
+                text-align: center;
+                width: 200px;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            .tab-nav li{
+                display: inline-block; text-align:center;
+            }
+            .tab-nav li a{ 
+                display:block; 
+                border: 1px solid #333; 
+                color: #000; 
+                line-height: 30px;
+                width: 60px;
+                height: 30px;
+                font-size:0.875rem;
+            }
+            .tab-nav li a:hover,
+            .tab-nav li a.active{
+                background:#212529; color:#fff; 
+            }
+        </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <header id="header"></header>
+            <!-- 대시보드 메뉴 -->
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="my-3 fs-5 fw-bold">Dashboard</h1>
+                        <!-- 콘텐츠 탑 -->
+                        <div class="row">
+                            <!-- 차트 -->
+                            <div class="col-xl-6">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-header d-flex align-items-center justify-content-between px-4">
+                                        <a href="#">사용내역</a>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <div class="chart-box p-3">
+                                        <div class="tab-content">
+                                            <div id="tab01">
+                                                <canvas id="myAreaChart01" width="100%" height="40"></canvas>
+                                            </div>
+                                            <div id="tab02">
+                                                <canvas id="myAreaChart02" width="100%" height="40"></canvas>
+                                            </div>
+                                            <div id="tab03">
+                                                <canvas id="myAreaChart03" width="100%" height="40"></canvas>
+                                            </div>
+                                        </div>
+                                        <ul class="tab-nav mt-2">
+                                            <li><a href="#tab01">시간별</a></li>
+                                            <li><a href="#tab02">일별</a></li>
+                                            <li><a href="#tab03">월별</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 문의내역 -->
+                            <div class="col-xl-6">
+                                <div class="card mb-4 shadow-sm"  style="height: calc(100% - 24px);">
+                                    <div class="card-header d-flex align-items-center justify-content-between px-4">
+                                        <a href="#">문의내역</a>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <table class="cardbody table" style="width: 90%; margin: 0 auto; border-collapse: inherit;">
+                                        <thead>
+                                            <tr style="border: none;">
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vel amet odit, aspernatur officiis quas atque numquam sapiente! Amet harum et accusamus blanditiis consequatur nihil autem dignissimos nobis nostrum excepturi?
+                                                        </a>
+                                                    </div>
+                                                    </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates veritatis repudiandae, praesentium nostrum ipsum saepe ex a fugit ullam incidunt dicta labore voluptatem delectus. Necessitatibus suscipit dolore doloribus explicabo eveniet?
+                                                        </a>
+                                                    </div>
+                                                    </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum similique magni repellat debitis dignissimos? Voluptatum explicabo dicta illo, ut natus a asperiores obcaecati commodi fugit id vel sapiente odio consequuntur.
+                                                        </a>
+                                                    </div>
+                                                    </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, neque numquam voluptatibus vel quasi voluptas, consequatur veritatis id soluta quod, deserunt minima dolores excepturi fugit officia laboriosam ullam deleniti ipsam.
+                                                        </a>
+                                                    </div>
+                                                    </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 콘텐츠 바텀 -->
+                        <div class="dashboad-btm row">
+                            <!-- 사용내역 -->
+                            <div class="col-md-6 col-xl-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-header d-flex align-items-center justify-content-between px-4">
+                                        <div>
+                                            <a href="#">사용내역</a>
+                                            <span style="font-size: 0.75rem; color: #6e6e6e;">2022.11.11 기준</span>
+                                        </div>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <div class="use-history">
+                                        <ul class="count card-body px-5">
+                                            <li class="mb-3">
+                                                <ul class="pb-1 d-flex justify-content-between">
+                                                    <li>일</li>
+                                                    <li><span class="fw-bold">3</span> 건</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul class="pb-1 d-flex justify-content-between">
+                                                    <li>월</li>
+                                                    <li><span class="fw-bold">23</span> 건</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 디바이스 -->
+                            <div class="col-md-6 col-xl-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-header d-flex align-items-center justify-content-between px-4">
+                                        <div>
+                                            <a href="#">디바이스</a>
+                                            <span style="font-size: 0.75rem; color: #6e6e6e;">2022.11.11 기준</span>
+                                        </div>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <ul class="count card-body px-5 py-4">
+                                        <li class="mb-3">
+                                            <ul class="pb-1 d-flex justify-content-between">
+                                                <li>오류</li>
+                                                <li><span class="fw-bold">12</span> 건</li>
+                                            </ul>
+                                        </li>
+                                        <li class="mb-3">
+                                            <ul class="pb-1 d-flex justify-content-between">
+                                                <li>고장</li>
+                                                <li><span class="fw-bold">2</span> 건</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul class="pb-1 d-flex justify-content-between">
+                                                <li>정상</li>
+                                                <li><span class="fw-bold">36</span> 건</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 고장신고 -->
+                            <div class="col-md-6 col-xl-4 mb-4">
+                                <div class="card shadow-sm">
+                                    <div class="card-header d-flex align-items-center justify-content-between px-4">
+                                        <div>
+                                            <a href="#">고장신고</a>
+                                            <span style="font-size: 0.75rem; color: #6e6e6e;">2022.11.11 기준</span>
+                                        </div>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <table class="cardbody table" style="width: 90%; margin: 0 auto; border-collapse: inherit;">
+                                        <thead>
+                                            <tr style="border: none;">
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="small">
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolorem tempora consectetur, dolor enim, magni corporis est assumenda voluptates, quas ex praesentium dicta quod veritatis quae repellendus adipisci? Dolor, quasi.
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ullam tempore. Nulla quisquam hic fuga quibusdam quaerat, culpa consectetur harum sequi quas optio odit incidunt exercitationem neque aliquam dolores labore.
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-1 text-center">1</td>
+                                                <td class="col-9">
+                                                    <div class="text-ellipsis">
+                                                        <a href="#">
+                                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae laboriosam modi voluptate earum corporis, nisi placeat sit reprehenderit fugit eius similique nesciunt dolorem ut voluptas beatae provident distinctio quia assumenda!
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="col-2 text-center">2022.11.11</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer id="footer"></footer>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../js/chart-area-demo.js"></script>
+        <script src="../js/include.js"></script>
+    </body>
+</html>

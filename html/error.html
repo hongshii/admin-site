@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CHABOB 에러 내역 조회</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../css/device_write.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>    
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
+                transform: scale(0.7);
+            }
+            table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
+                transform: scale(0.7);
+            }
+            .usage-history {
+                padding: 1.25rem 3rem;
+            }
+            .dataTables_wrapper {
+                font-size: 0.875rem;
+            }
+            .dataTables_wrapper .dataTables_scroll {
+                padding: 16px 0;
+            }
+            table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting_asc_disabled, table.dataTable thead>tr>th.sorting_desc_disabled, table.dataTable thead>tr>td.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting_asc_disabled, table.dataTable thead>tr>td.sorting_desc_disabled {
+                padding-right: 0;
+                border: 1px solid #ddd;
+                border-bottom: 1px solid #000 !important;
+            }
+            .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>td {
+                border: 1px solid #ddd;
+            }
+            .dataTables_wrapper.no-footer div.dataTables_scrollHead table.dataTable, .dataTables_wrapper.no-footer div.dataTables_scrollBody>table {
+                border-collapse: collapse;
+            }
+            .dataTables_wrapper .dataTables_filter input {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <header id="header"></header>
+            <!-- 대시보드 메뉴 -->
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="content-header px-4 d-flex justify-content-between">
+                        <h1 class="my-3 fs-5 fw-bold">에러 내역</h1>
+                        <ul class="d-flex align-items-center">
+                            <li>디바이스 관리</li>
+                            <span>&nbsp;>&nbsp;</span>
+                            <li>에러 내역 조회</li>
+                        </ul>
+                    </div>
+                    <div class="error card m-4">
+                        <div class="card-body">
+                            <table id="error-table">
+                                <thead>
+                                    <tr>
+                                        <th>디바이스 아이디</th>
+                                        <th>에러 코드</th>
+                                        <th>에러 메세지</th>
+                                        <th>생성 날짜</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lorem</td>
+                                        <td>labore</td>
+                                        <td>maiores</td>
+                                        <td>repellat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>magni</td>
+                                        <td>repudiandae</td>
+                                        <td>exercitationem</td>
+                                        <td>tempora</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lorem</td>
+                                        <td>labore</td>
+                                        <td>maiores</td>
+                                        <td>repellat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Libero</td>
+                                        <td>adipisicing</td>
+                                        <td>consectetur</td>
+                                        <td>ipsum</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+                <footer id="footer"></footer>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+        <script src="../js/include.js"></script>
+        <script>  	
+        $('#error-table').DataTable( {
+            "responsive": false,
+            "autoWidth": true,
+            "scrollY": true, // 스크롤바
+            "info" : false,
+            responsive: false,
+            language: {
+                "searchPlaceholder": "Search...",
+                "emptyTable": "데이터가 없습니다",
+                "info": "_START_ - _END_ \/ _TOTAL_",
+                "infoEmpty": "0 - 0 \/ 0",
+                "infoFiltered": "(총 _MAX_ 개)",
+                "infoThousands": ",",
+                "lengthMenu": "_MENU_ 개씩 보기",
+                "loadingRecords": "읽는중...",
+                "processing": "처리중...",
+                "search": "",
+                "zeroRecords": "검색 결과가 없습니다",
+                "paginate": {
+                    "first": "처음",
+                    "last": "마지막",
+                    "next": ">",
+                    "previous": "<"
+                },
+            }
+        });
+        </script>
+    </body>
+</html>

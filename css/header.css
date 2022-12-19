@@ -1,0 +1,94 @@
+.logo {
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+.logo > img {
+    height: 80%;
+}
+.navbar-nav {
+    font-size: 0.875rem;
+    margin-right: 50px;
+}
+.nav-item {
+    position: relative;
+}
+.nav-item:hover .mypage {
+    display: block;
+}
+.nav-item ul.mypage {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+.nav-item ul.mypage li:hover {
+    background: rgba(0,0,0,0.1);
+} 
+.mypage > li > a {
+    font-size: 0.875rem;
+}    
+.nav {
+    font-size: 0.9375rem;
+}
+.nav .main-menu {
+    border-bottom: 1px solid #666;
+}
+.nav .main-menu:first-child {
+    border-top: 1px solid #666;
+}
+.sub-menu > nav > a {
+    font-size: 0.8438rem;
+}
+#layoutSidenav_nav {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    padding-top: 56px;
+    background: #212529;
+}
+#layoutSidenav_nav .side-bar {
+    color: #666;
+}
+#layoutSidenav_nav .side-bar .side-bar-list {
+    padding: 12px;
+    border-bottom: 1px solid #666 ;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu-first .arrow,
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu .arrow {
+    transform: rotate(-90deg);
+}
+#layoutSidenav_nav .side-bar .side-bar-list.active > .sub-menu-first .arrow,
+#layoutSidenav_nav .side-bar .side-bar-list.active > .sub-menu .arrow {
+    transform: rotate(0);
+}
+#layoutSidenav_nav .side-bar .side-bar-list.active > .sub-menu {
+    color: #fff;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu {
+    display: flex;
+    justify-content: space-between;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu:hover {
+    color: #fff;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu-list {
+    display: none;
+    padding-left: 24px;
+}
+#layoutSidenav_nav .side-bar .side-bar-list.active > .sub-menu-list {
+    display: block;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu-list li {
+    padding: 12px 0;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu-list li:last-child {
+    padding-bottom: 0;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu-list li a {
+    font-size: 0.8125rem;
+}
+#layoutSidenav_nav .side-bar .side-bar-list > .sub-menu-list li a:hover {
+    color: #fff;
+}

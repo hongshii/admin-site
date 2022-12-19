@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Login - CHABOB Admin</title>
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+	<style>
+        .background {
+            position: absolute;
+            background: url(../img/login_background.jpg)no-repeat center center;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            z-index: 0;
+        }
+        .login-field {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+        .login-box {
+            width: 520px;
+            background: #f9f9f9;
+        }
+        .login-button a {
+            width: 100%;
+        }
+        @media all and (max-width:767px){
+            .login-box {
+                width: 90%;
+            }
+        }
+	</style>
+    <body>
+        <div class="background"></div>
+	    <div class="login-field">
+	        <div class="login-box rounded shadow shadow-lg rounded-lg px-4 py-2">
+	            <h3 class="text-center font-weight-light my-4">Login</h3>
+	            <form action="${pageContext.request.contextPath}/loginAction.do" method="POST">
+	                <div class="form-floating mb-3">
+	                    <input class="form-control" name="user_id" id="inputEmail" type="text" placeholder="name@example.com">
+	                    <label for="inputEmail">ID</label>
+	                </div>
+	                <div class="form-floating mb-3">
+	                    <input class="form-control" name="user_pwd" id="inputPassword" type="password" placeholder="Password">
+	                    <label for="inputPassword">Password</label>
+	                </div>
+	                <div class="login-button mt-4 mb-4">
+                        <a href="index.html" class="btn btn-dark py-2">
+                            LOGIN
+                            <!-- <input type="submit" class="btn btn-dark py-2" value="LOGIN"> -->
+                        </a>
+	                </div>
+	            </form>
+                <div class="register mb-2 text-center">
+                    <span><a href="register.html">회원가입</a></span>
+                    <span class="line">|</span>
+                    <span><a href="password.html">비밀번호 찾기</a></span>
+                </div>
+	        </div>
+	    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
+    </body>
+</html>

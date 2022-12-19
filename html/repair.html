@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CHABOB 고장신고</title>
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../css/repair.css">
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <header id="header"></header>
+            <!-- 대시보드 메뉴 -->
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="content-header px-4 d-flex justify-content-between">
+                        <h1 class="my-3 fs-5 fw-bold">고장 신고</h1>
+                        <ul class="d-flex align-items-center">
+                            <li>고장, 설치, 문의</li>
+                            <span>&nbsp;>&nbsp;</span>
+                            <li>고장 신고</li>
+                        </ul>
+                    </div>
+                    <!-- 고장 신고 내역 리스트 -->
+                    <div class="repair-list card m-4">
+                        <div class="repair-btn">
+                            <ul>
+                                <li class="left-btn">
+                                    <input type="submit" class="delete" value="삭제">
+                                </li>
+                                <li class="right-btn search">
+                                    <input class="search-form" type="text" placeholder="검색어를 입력해주세요.">
+                                    <button class="btn btn-light small" id="btnNavbarSearch" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <table class="text-center">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" name="chkAll" id="chkAll">
+                                    </th>
+                                    <th>번호</th>
+                                    <th>아이디</th>
+                                    <th>충전기 모델명</th>
+                                    <th>충전소 이름</th>
+                                    <th>이름</th>
+                                    <th>연락처</th>
+                                    <th>내용</th>
+                                    <th>작성일</th>
+                                    <th>조회</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="chk" id="chk1" class="chk">
+                                    </td>
+                                    <td style="width: 50px;">
+                                        5
+                                    </td>
+                                    <td style="width: 120px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                Lorem ipsum dolor sit amet 
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>consectetur</td>
+                                    <td>adipisicing</td>
+                                    <td>Nisi</td>
+                                    <td>officia</td>
+                                    <td style="width: 400px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                <a href="repair_detail.html">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. corporis eligendi eos doloribus beatae, modi dolorem veritatis non excepturi.
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>deleniti</td>
+                                    <td style="width: 80px;">
+                                        <a class="view" href="repair_detail.html">
+                                            조회
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="chk" id="chk1" class="chk">
+                                    </td>
+                                    <td style="width: 50px;">
+                                        4
+                                    </td>
+                                    <td style="width: 120px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                Lorem ipsum dolor sit amet 
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>consectetur</td>
+                                    <td>adipisicing</td>
+                                    <td>Nisi</td>
+                                    <td>officia</td>
+                                    <td style="width: 400px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                <a href="repair_detail.html">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. corporis eligendi eos doloribus beatae, modi dolorem veritatis non excepturi.
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>deleniti</td>
+                                    <td style="width: 80px;">
+                                        <a class="view" href="repair_detail.html">
+                                            조회
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="chk" id="chk1" class="chk">
+                                    </td>
+                                    <td style="width: 50px;">
+                                        3
+                                    </td>
+                                    <td style="width: 120px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                Lorem ipsum dolor sit amet 
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>consectetur</td>
+                                    <td>adipisicing</td>
+                                    <td>Nisi</td>
+                                    <td>officia</td>
+                                    <td style="width: 400px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                <a href="repair_detail.html">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. corporis eligendi eos doloribus beatae, modi dolorem veritatis non excepturi.
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>deleniti</td>
+                                    <td style="width: 80px;">
+                                        <a class="view" href="repair_detail.html">
+                                            조회
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="chk" id="chk1" class="chk">
+                                    </td>
+                                    <td style="width: 50px;">
+                                        2
+                                    </td>
+                                    <td style="width: 120px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                Lorem ipsum dolor sit amet 
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>consectetur</td>
+                                    <td>adipisicing</td>
+                                    <td>Nisi</td>
+                                    <td>officia</td>
+                                    <td style="width: 400px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                <a href="repair_detail.html">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. corporis eligendi eos doloribus beatae, modi dolorem veritatis non excepturi.
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>deleniti</td>
+                                    <td style="width: 80px;">
+                                        <a class="view" href="repair_detail.html">
+                                            조회
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="chk" id="chk1" class="chk">
+                                    </td>
+                                    <td style="width: 50px;">
+                                        1
+                                    </td>
+                                    <td style="width: 120px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                Lorem ipsum dolor sit amet 
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>consectetur</td>
+                                    <td>adipisicing</td>
+                                    <td>Nisi</td>
+                                    <td>officia</td>
+                                    <td style="width: 400px;">
+                                        <div class="text-ellipsis">
+                                            <span>
+                                                <a href="repair_detail.html">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. corporis eligendi eos doloribus beatae, modi dolorem veritatis non excepturi.
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>deleniti</td>
+                                    <td style="width: 80px;">
+                                        <a class="view" href="repair_detail.html">
+                                            조회
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 페이징 버튼 -->
+                    <ul class="repair-page-btn page-btn">
+                        <li class="page-btn prevLink">
+                            <a href="#">
+                                <img src="../img/icon_prev.png" alt="이전버튼">
+                            </a>
+                        </li>
+                        <li class="page-num click">
+                            <a href="#">1</a> 
+                        </li> 
+                        <li class="page-num">
+                            <a href="#">2</a> 
+                        </li> 
+                        <li class="page-btn nextLink">
+                            <a href="#">
+                                <img src="../img/icon_next.png" alt="다음버튼">
+                            </a>
+                        </li>
+                    </ul>
+                </main>
+                <footer id="footer"></footer>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+        <script src="../js/include.js"></script>
+        <script>
+          //체크버튼
+            window.onload = function () {
+            const checkAll = document.getElementById('chkAll');
+            const chks = document.querySelectorAll('.chk');  
+            const chkBoxLength = chks.length;
+        
+            checkAll.addEventListener('click', function(event) {
+                    if(event.target.checked)  {
+                        chks.forEach(function(value){
+                        value.checked = true;
+                    })
+                    }else {
+                    chks.forEach(function(value){
+                    value.checked = false;
+                    })
+                }
+            });
+            for (chk of chks){
+                chk.addEventListener('click', function() {
+                        let count = 0;
+                        chks.forEach(function(value){
+                            if(value.checked == true){
+                                count++;
+                            }
+                        })
+                        if(count !== chkBoxLength){
+                            checkAll.checked = false;
+                        }else{
+                            checkAll.checked = true;
+                        }
+                    })
+                }
+            };
+        </script>
+    </body>
+</html>

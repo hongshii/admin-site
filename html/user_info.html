@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CHABOB 회원정보 조회</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/notice.css">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {
+            transform: scale(0.7);
+        }
+        table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {
+            transform: scale(0.7);
+        }
+        .dataTables_wrapper {
+            font-size: 0.875rem;
+        }
+        .dataTables_wrapper .dataTables_scroll {
+            padding: 16px 0;
+        }
+        .dataTables_scroll .dataTables_scrollHeadInner, .dataTables_scroll .dataTables_scrollHeadInner .dataTable.no-footer {
+        	width: 100% !important;
+        }
+        table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting_asc_disabled, table.dataTable thead>tr>th.sorting_desc_disabled, table.dataTable thead>tr>td.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting_asc_disabled, table.dataTable thead>tr>td.sorting_desc_disabled {
+            padding-right: 0;
+            border: 1px solid #ddd;
+            border-bottom: 1px solid #000 !important;
+        }
+        .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>td {
+            border: 1px solid #ddd;
+        }
+        .dataTables_wrapper.no-footer div.dataTables_scrollHead table.dataTable, .dataTables_wrapper.no-footer div.dataTables_scrollBody>table {
+            border-collapse: collapse;
+        }
+        .dataTables_wrapper .dataTables_filter input {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="header"></div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="content-header px-4 d-flex justify-content-between">
+                    <h1 class="my-3 fs-5 fw-bold">회원 정보 조회</h1>
+                </div>
+                <div class="user-info card m-4">
+                    <div class="card-body">
+                        <table id="user-table">
+                            <thead>
+                                <tr>
+                                    <th>아이디</th>
+                                    <th>로그인 타입</th>
+                                    <th>이름</th>
+                                    <th>핸드폰 번호</th>
+                                    <th>생년월일</th>
+                                    <th>차량제조사</th>
+                                    <th>차종</th>
+                                    <th>주소</th>
+                                    <th>이메일</th>
+                                    <th>가입 날짜</th>
+                                    <th>회원 탈퇴</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lorem</td>
+                                    <td>labore</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                    <td>magni</td>
+                                    <td>repudiandae</td>
+                                    <td>exercitationem</td>
+                                    <td>tempora</td>
+                                    <td>voluptatem</td>
+                                    <td>amet</td>
+                                    <td>quibusdam</td>
+                                </tr>
+                                <tr>
+                                    <td>pariatur</td>
+                                    <td>Libero</td>
+                                    <td>adipisicing</td>
+                                    <td>consectetur</td>
+                                    <td>ipsum</td>
+                                    <td>magni</td>
+                                    <td>repudiandae</td>
+                                    <td>exercitationem</td>
+                                    <td>tempora</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                </tr>
+                                <tr>
+                                    <td>tempora</td>
+                                    <td>Lorem</td>
+                                    <td>labore</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                    <td>Lorem</td>
+                                    <td>labore</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                    <td>repudiandae</td>
+                                    <td>exercitationem</td>
+                                </tr>
+                                <tr>
+                                    <td>amet</td>
+                                    <td>labore</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                    <td>magni</td>
+                                    <td>repudiandae</td>
+                                    <td>exercitationem</td>
+                                    <td>tempora</td>
+                                    <td>voluptatem</td>
+                                    <td>Lorem</td>
+                                    <td>quibusdam</td>
+                                </tr>
+                                <tr>
+                                    <td>Libero</td>
+                                    <td>adipisicing</td>
+                                    <td>consectetur</td>
+                                    <td>ipsum</td>
+                                    <td>pariatur</td>
+                                    <td>magni</td>
+                                    <td>repudiandae</td>
+                                    <td>exercitationem</td>
+                                    <td>tempora</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                </tr>
+                                <tr>
+                                    <td>labore</td>
+                                    <td>maiores</td>
+                                    <td>repellat</td>
+                                    <td>Lorem</td>
+                                    <td>labore</td>
+                                    <td>maiores</td>
+                                    <td>Lorem</td>
+                                    <td>repellat</td>
+                                    <td>repudiandae</td>
+                                    <td>exercitationem</td>
+                                    <td>tempora</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+            <div id="footer"></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>>
+    <script src="../js/include.js"></script>
+    <script>  
+        $('#user-table').DataTable( {
+            "responsive": false,
+            "autoWidth": true,
+            "scrollY": true, // 스크롤바
+            "info" : false,
+            responsive: false,
+            language: {
+                "searchPlaceholder": "Search...",
+                "emptyTable": "데이터가 없습니다",
+                "info": "_START_ - _END_ \/ _TOTAL_",
+                "infoEmpty": "0 - 0 \/ 0",
+                "infoFiltered": "(총 _MAX_ 개)",
+                "infoThousands": ",",
+                "lengthMenu": "_MENU_ 개씩 보기",
+                "loadingRecords": "읽는중...",
+                "processing": "처리중...",
+                "search": "",
+                "zeroRecords": "검색 결과가 없습니다",
+                "paginate": {
+                    "first": "처음",
+                    "last": "마지막",
+                    "next": ">",
+                    "previous": "<"
+                },
+            }
+        });
+    </script>
+</body>
+</html>
